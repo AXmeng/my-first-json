@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>添加</title>
+</head>
+
+<body>
+    商品名：<input type="text"><br> 商品价格：
+    <input type="text"><br> 商品描述：
+    <input type="text"><br>
+    <input type="button" value="添加" id="addBtn">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="jquery.1.11.3.js"></script>
+    <script>
+        $("#addBtn").click(function() {
+            console.log($('input')[0].value);
+            console.log($('input')[1].value);
+            axios.post("http://localhost:3000/products", {
+                name: $('input')[0].value,
+                price: $('input')[1].value
+            }).then(res => {
+                console.log(res);
+            })
+            alert("添加成功")
+            location.href = "index.html";
+            window.onload;
+        })
+    </script>
+</body>
+
+</html>

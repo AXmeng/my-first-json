@@ -1,0 +1,28 @@
+{
+  "products": [
+    {
+      "name": "华为P40",
+      "price": "200",
+      "id": 1,
+      "images": "https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3224497696,3060924760&fm=26&gp=0.jpg"
+    },
+    {
+      "id": 2,
+      "name": "红米K30至尊2纪念版",
+      "price": 100,
+      "images": "https://gss0.baidu.com/7LsWdDW5_xN3otqbppnN2DJv/forum/pic/item/86d6277f9e2f0708ef612557fe24b899a901f205.jpg"
+    },
+    {
+      "id": 3,
+      "name": "魅族17pro",
+      "price": 300,
+      "images": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1601958345629&di=8d6b241c20c3afae282f1bdce492cb07&imgtype=0&src=http%3A%2F%2Finews.gtimg.com%2Fnewsapp_bt%2F0%2F11732448700%2F641.jpg"
+    },
+    {
+      "name": "米10",
+      "price": "300",
+      "id": 4,
+	  "images":"https://gss0.baidu.com/7LsWdDW5_xN3otqbppnN2DJv/forum/pic/item/8435e5dde71190ef4f9a9d88d91b9d16fdfa6007.jpg"
+    }
+  ]
+}

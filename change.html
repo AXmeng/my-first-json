@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>修改</title>
+</head>
+
+<body>
+    商品id：<input type="text"><br> 商品名：
+    <input type="text"><br> 商品价格：
+    <input type="text"><br>
+    <input type="button" value="修改" id="chaBtn">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="jquery.1.11.3.js"></script>
+    <script>
+        // let chaBtn = document.getElementById("chaBtn");
+        $("#chaBtn").click(function() {
+            // console.log($('input')[0].val())
+            // console.log($('input')[1].val())
+            // console.log($('input')[2].val())
+            axios.patch("http://localhost:3000/products/" + $('input')[0].val(), {
+                name: $('input')[1].val(),
+                price: $('input')[2].val()
+            }).then(res => {
+                console.log(res.data);
+            })
+            alert("修改成功")
+            location.href = "index.html";
+            window.onload;
+        })
+    </script>
+</body>
+
+</html>

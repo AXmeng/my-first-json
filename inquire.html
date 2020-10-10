@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>查询</title>
+    <style>
+        li {
+            list-style: none;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 200px;
+            height: 300px;
+        }
+        
+        ul {
+            width: 200px;
+            height: 300px;
+            margin: 100px 300px;
+            border: 1px solid red;
+        }
+        
+        img {
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    请输入您要查询的商品ID：<input type="text" id="ipt">
+    <input type="button" value="查询" id="inqBtn">
+    <ul id="list">
+        <!-- <li></li> -->
+    </ul>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="jquery.1.11.3.js"></script>
+
+    <script>
+        var str = '';
+        $("#inqBtn").click(function() {
+            alert("查询成功")
+            axios.get("http://localhost:3000/products/" + $("#ipt").val()).then(res => {
+
+                console.log(res.data);
+                let products = res.data;
+                console.log(products.name)
+                console.log(products.price)
+                str = `<li>
+                                <img src="${products.images}" alt="你有点不可爱啊">
+                                <p>${products.name}</p>
+                                <p>￥${products.price}</p>
+                        </li>`
+            })
+            $("#list").html(str);
+        })
+    </script>
+</body>
+
+</html>

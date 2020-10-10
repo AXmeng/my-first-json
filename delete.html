@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>删除</title>
+</head>
+
+<body>
+    商品ID：<input type="text" id="ipt">
+    <input type="button" value="删除" id="delBtn">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="jquery.1.11.3.js"></script>
+    <script>
+        $("#delBtn").click(function() {
+            console.log($("#ipt").val());
+            axios.delete("http://localhost:3000/products/" + $("#ipt").val()).then(res => {
+                console.log(res);
+            })
+            alert("删除成功")
+            location.href = "index.html";
+            window.onload;
+        })
+    </script>
+</body>
+
+</html>
